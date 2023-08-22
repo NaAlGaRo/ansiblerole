@@ -1,0 +1,16 @@
+---
+- name: New application
+  hosts: web
+  become: yes
+
+  roles:
+   - common
+   - web
+
+- name: Start application
+  hosts: app 
+  become: yes
+  
+  roles:
+   - common
+   - app
